@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 46%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 222 47% 11%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 172 66% 50%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 7%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 222 47% 7%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 172 66% 50%;
+  }
+
+  * { @apply border-border; }
+
+  body {
+    @apply min-h-screen text-foreground antialiased transition-colors duration-300 ease-out;
+    @apply bg-[radial-gradient(circle_at_top_left,_rgba(45,212,191,0.11),_transparent_25%),linear-gradient(180deg,_#f8fafc_0%,_#f3f6fb_100%)];
+    background-attachment: fixed;
+  }
+
+  html.dark body {
+    @apply bg-[radial-gradient(circle_at_top_left,_rgba(45,212,191,0.16),_transparent_28%),linear-gradient(180deg,_#020617_0%,_#0f172a_100%)];
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-teal-200/70 text-slate-950;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: #111827;
+  }
+
+  * {
+    background: transparent !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+  }
+
+  .resume-paper {
+    width: 210mm;
+    min-height: 297mm;
+    padding: 18mm;
+    box-shadow: none;
+    background: white;
+  }
+
+  .resume-paper header,
+  .resume-paper section,
+  .resume-paper article {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
