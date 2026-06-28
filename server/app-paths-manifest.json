@@ -1,0 +1,5 @@
+{
+  "/builder/page": "app/builder/page.js",
+  "/page": "app/page.js",
+  "/resume/[slug]/page": "app/resume/[slug]/page.js"
+}
